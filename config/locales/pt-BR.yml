@@ -1,0 +1,5 @@
+'pt-BR':
+  hello: "Olá, mundo!"
+  date:
+    formats:
+      default: "%d/%m/%Y"

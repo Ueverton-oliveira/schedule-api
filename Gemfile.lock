@@ -156,6 +156,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   faker
+  i18n
   listen (~> 3.2)
   pry
   puma (~> 4.1)
