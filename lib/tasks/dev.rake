@@ -15,7 +15,7 @@ namespace :dev do
         name: Faker::Name.name,
         email: Faker::Internet.email,
         birthdate: Faker::Date.between(from: 65.years.ago, to: 18.years.ago),
-        Kind_id: Kind.all
+        kind: Kind.all.sample
       )
     end
   end

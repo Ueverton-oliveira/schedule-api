@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2021_06_22_130400) do
     t.date "birthdate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "Kind_id"
-    t.index ["Kind_id"], name: "index_contacts_on_Kind_id"
+    t.integer "kind_id"
+    t.index ["kind_id"], name: "index_contacts_on_kind_id"
   end
 
   create_table "kinds", force: :cascade do |t|
@@ -28,5 +28,5 @@ ActiveRecord::Schema.define(version: 2021_06_22_130400) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "contacts", "Kinds"
+  add_foreign_key "contacts", "kinds"
 end
