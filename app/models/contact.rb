@@ -2,6 +2,13 @@ class Contact < ApplicationRecord
   belongs_to :kind, optional: true
   has_many :phones
 
+  def as_json(options={})
+    h = super(options)
+    h[:birthdate] = (I18n.l(self.birthdate) unless self.birthdate.blank?) 
+    h
+  end
+
+=begin
   def to_br
     { 
       name: self.name, 
@@ -10,7 +17,7 @@ class Contact < ApplicationRecord
     }
   end
 
-=begin
+
   def author
     "Ueverton Oliveira"
   end
