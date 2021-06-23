@@ -1,6 +1,8 @@
 namespace :dev do
   desc "Config develop environment"
   task setup: :environment do
+    %x(rails db:drop db:create db:migrate)
+
     kinds = %w(Amigo Comercial Conhecido)
     
     kinds.each do |kind|
@@ -26,6 +28,14 @@ namespace :dev do
         )
         contact.save!
       end
+    end
+
+    Contact.all.each do |contact|
+      address = Address.create!(
+        street: Faker::Address.street_address,
+        city: Faker::Address.city,
+        contact: contact
+      )      
     end
 
   end
