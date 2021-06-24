@@ -1,5 +1,5 @@
-class PhonesController < ApplicationController
-  before_action :set_phones, only: [:show]
+class AddressesController < ApplicationController
+  before_action :set_address, only: [:show]
 
   def show
     render json: @phones
@@ -8,7 +8,7 @@ class PhonesController < ApplicationController
   private
   
     # Use callbacks to share common setup or constraints between actions.
-    def set_phones
+    def set_address
       if params[:contact_id]
         @phones = Contact.find(params[:contact_id]).phones
       end
